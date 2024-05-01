@@ -1,0 +1,21 @@
+diff --git a/node_modules/react-dom/cjs/react-dom-server.node.development.js b/node_modules/react-dom/cjs/react-dom-server.node.development.js
+index de58cde..f54d6d7 100644
+--- a/node_modules/react-dom/cjs/react-dom-server.node.development.js
++++ b/node_modules/react-dom/cjs/react-dom-server.node.development.js
+@@ -16,6 +16,7 @@ if (process.env.NODE_ENV !== "production") {
+ 
+ var React = require('react');
+ var util = require('util');
++var {TextEncoder} = require('text-encoding-polyfill');
+ 
+ var ReactVersion = '18.3.1';
+ 
+@@ -218,7 +219,7 @@ function completeWriting(destination) {
+ function close(destination) {
+   destination.end();
+ }
+-var textEncoder = new util.TextEncoder();
++var textEncoder = new TextEncoder();
+ function stringToChunk(content) {
+   return content;
+ }

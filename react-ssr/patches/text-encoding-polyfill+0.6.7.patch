@@ -1,0 +1,14 @@
+diff --git a/node_modules/text-encoding-polyfill/lib/encoding.js b/node_modules/text-encoding-polyfill/lib/encoding.js
+index 4560f6e..4124e7b 100644
+--- a/node_modules/text-encoding-polyfill/lib/encoding.js
++++ b/node_modules/text-encoding-polyfill/lib/encoding.js
+@@ -3307,6 +3307,9 @@
+     };
+   }
+ 
++  globalThis.TextEncoder = TextEncoder;
++  globalThis.TextDecoder = TextDecoder;
++
+ // For strict environments where `this` inside the global scope
+ // is `undefined`, take a pure object instead
+ }(this || {}));
