@@ -39,6 +39,7 @@
 
 import os
 import polyglot
+import server.settings
 from django.utils.html import escape
 from django.core import management
 
@@ -46,7 +47,6 @@ class PyHello:
     def hello(self, txt):
         text = escape("hello a sd as d " + str(txt))
         print(text)
-        more_hello()
 
         polyglot.eval(path="./react-ssr/dist/bundle.js", language="js")
         Render = polyglot.import_value("Render")
@@ -55,7 +55,8 @@ class PyHello:
         print(Render({"username": "Lasa"}))
 
     def runserver(self):
-        os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'site.settings')
+        server.test.test()
+        os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'server.settings')
         management.call_command('runserver')
 
 

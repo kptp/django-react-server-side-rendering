@@ -62,7 +62,6 @@
             <configuration>
               <!-- specify python packages as if used with pip -->
               <packages>
-                <package>termcolor==2.2</package>
                 <package>django==4.2</package>
               </packages>
               <pythonHome>
