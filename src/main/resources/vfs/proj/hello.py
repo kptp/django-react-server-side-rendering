@@ -37,8 +37,8 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+import os
 import polyglot
-from site.more_hello import more_hello
 from django.utils.html import escape
 from django.core import management
 
@@ -55,6 +55,7 @@ class PyHello:
         print(Render({"username": "Lasa"}))
 
     def runserver(self):
+        os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'site.settings')
         management.call_command('runserver')
 
 
