@@ -42,6 +42,7 @@ import sys
 import polyglot
 from django.utils.html import escape
 from django.core import management
+from django.core.wsgi import get_wsgi_application
 
 class PyHello:
     def hello(self, txt):
@@ -57,6 +58,7 @@ class PyHello:
     def runserver(self):
         os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'server.settings')
         sys.argv = ["", "runserver", "--noreload", "--nothreading"]
+        application = get_wsgi_application()
         management.call_command('runserver', use_reloader=False, use_threading=False)
 
 
