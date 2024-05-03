@@ -15,7 +15,8 @@ import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent + "/home"
+# TODO SHOULD PROBABLY BE vfs HOME INSTEAD OF PROJ
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 # Quick-start development settings - unsuitable for production
@@ -33,16 +34,12 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    "channels",
-    "retro.apps.RetroConfig",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "rest_framework",
-    "corsheaders",
 ]
 
 MIDDLEWARE = [
@@ -148,7 +145,3 @@ CORS_ALLOWED_ORIGINS = [
 ]
 
 ASGI_APPLICATION = "server.asgi.application"
-
-CHANNEL_LAYERS = {"default": {"BACKEND": "channels.layers.InMemoryChannelLayer"}}
-
-JWT_SECRET = os.environ["JWT_SECRET"]

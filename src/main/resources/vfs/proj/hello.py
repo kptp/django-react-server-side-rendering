@@ -38,8 +38,8 @@
 # SOFTWARE.
 
 import os
+import sys
 import polyglot
-import server.settings
 from django.utils.html import escape
 from django.core import management
 
@@ -55,9 +55,9 @@ class PyHello:
         print(Render({"username": "Lasa"}))
 
     def runserver(self):
-        server.test.test()
         os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'server.settings')
-        management.call_command('runserver')
+        sys.argv = ["", "runserver", "--noreload", "--nothreading"]
+        management.call_command('runserver', use_reloader=False, use_threading=False)
 
 
 # We export the PyHello class to Java as our explicit interface with the Java side

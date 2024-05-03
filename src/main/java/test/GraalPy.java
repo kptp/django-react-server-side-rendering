@@ -69,9 +69,9 @@ public class GraalPy {
                 .build();
         Context context = Context.newBuilder()
                 // set true to allow experimental options
-                .allowExperimentalOptions(false)
+                .allowExperimentalOptions(true)
                 // setting false will deny all privileges unless configured below
-                .allowAllAccess(false)
+                .allowAllAccess(true)
                 // allows python to access the java language
                 .allowHostAccess(true)
                 // allow access to the virtual and the host filesystem, as well as sockets
