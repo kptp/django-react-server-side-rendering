@@ -15,8 +15,7 @@ import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-# TODO SHOULD PROBABLY BE vfs HOME INSTEAD OF PROJ
-BASE_DIR = Path("/graalpy_vfs")
+BASE_DIR = Path("/graalpy_vfs/proj")
 
 
 # Quick-start development settings - unsuitable for production
@@ -34,6 +33,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    "ssr.apps.SsrConfig",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",

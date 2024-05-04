@@ -1,8 +1,5 @@
-from django.urls import path
+from django.urls import path, include
 
-from . import views
-
-app_name = "retro"
 urlpatterns = [
-    path("", views.index, name="index"),
+    path("", include("ssr.urls")),
 ]
