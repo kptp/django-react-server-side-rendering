@@ -144,3 +144,16 @@ CORS_ALLOWED_ORIGINS = [
 ]
 
 ASGI_APPLICATION = "server.asgi.application"
+
+STORAGES = {
+    "default": {
+        "BACKEND": "django.core.files.storage.FileSystemStorage",
+    },
+    "staticfiles": {
+        "BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage",
+    },
+}
+
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
