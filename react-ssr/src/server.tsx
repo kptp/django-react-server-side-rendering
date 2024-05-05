@@ -4,8 +4,8 @@ import { renderToString } from "react-dom/server";
 
 import { App } from "./App";
 
-function render({ username }: ServerProps): string {
-  return renderToString(<App username={username} />);
+function render(props: ServerProps): string {
+  return renderToString(<App {...props} />);
 }
 
 Polyglot.export("Render", render);

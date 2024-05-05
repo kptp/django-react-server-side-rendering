@@ -12,7 +12,7 @@ def index(request):
     template = loader.get_template("ssr/index.html")
     username = request.GET.get("user", "masa")
 
-    props = {"username": username}
+    props = {"username": username, "startingNumber": 456}
     context = {
         "server_props": mark_safe(json.dumps(props)),
         "ssr_content": mark_safe(Render(props))

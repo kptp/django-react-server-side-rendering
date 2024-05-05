@@ -4,8 +4,8 @@
   "description": "SSR Test",
   "main": "index.tsx",
   "scripts": {
-    "build:server": "node build-server.mjs",
-    "build:client": "node build-client.mjs",
+    "build:server": "NODE_ENV=production node build-server.mjs",
+    "build:client": "NODE_ENV=production node build-client.mjs",
     "build": "npm run build:client && npm run build:server",
     "test": "echo \"Error: no test specified\" && exit 1",
     "postinstall": "patch-package"

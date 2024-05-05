@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
-export const App = ({ username }: ServerProps) => {
-  const [number, setNumber] = useState(0);
+export const App = ({ username, startingNumber }: ServerProps) => {
+  const [number, setNumber] = useState(startingNumber);
   return (
     <div>
       <div>Hello {username}!</div>
