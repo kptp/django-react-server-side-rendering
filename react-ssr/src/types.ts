@@ -1,0 +1,3 @@
+type ServerProps = {
+  username: string;
+};

@@ -1,4 +1,5 @@
 import polyglot
+import json
 
 from django.http import HttpResponse
 from django.template import loader
@@ -10,9 +11,11 @@ Render = polyglot.import_value("Render")
 def index(request):
     template = loader.get_template("ssr/index.html")
     username = request.GET.get("user", "masa")
+
+    props = {"username": username}
     context = {
-        "username": username,
-        "ssr_content": mark_safe(Render({"username": username}))
+        "server_props": mark_safe(json.dumps(props)),
+        "ssr_content": mark_safe(Render(props))
     }
 
     return HttpResponse(template.render(context, request))

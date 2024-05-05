@@ -4,7 +4,7 @@ import { renderToString } from "react-dom/server";
 
 import { App } from "./App";
 
-function render({ username }: { username: string }): string {
+function render({ username }: ServerProps): string {
   return renderToString(<App username={username} />);
 }
 

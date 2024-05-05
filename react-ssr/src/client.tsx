@@ -4,14 +4,15 @@ import { hydrateRoot } from "react-dom/client";
 
 import { App } from "./App";
 
-declare var username: string;
+declare var serverProps: string;
 
 function render() {
   const div = document.getElementById("root");
   if (!div) {
     return alert("fug :DDD");
   }
-  return hydrateRoot(div, <App username={username} />);
+  const props: ServerProps = JSON.parse(serverProps);
+  return hydrateRoot(div, <App {...props} />);
 }
 
 render();

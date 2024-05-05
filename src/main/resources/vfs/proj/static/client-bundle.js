@@ -35356,9 +35356,9 @@ init_dirname();
 init_buffer2();
 init_process2();
 var import_react = __toESM(require_react());
-var App = ({ username: username2 }) => {
+var App = ({ username }) => {
   const [number, setNumber] = (0, import_react.useState)(0);
-  return /* @__PURE__ */ import_react.default.createElement("div", null, /* @__PURE__ */ import_react.default.createElement("div", null, "Hello ", username2, "!"), /* @__PURE__ */ import_react.default.createElement("div", null, number), /* @__PURE__ */ import_react.default.createElement("button", { onClick: () => setNumber((num) => num + 1) }, "ADD!"));
+  return /* @__PURE__ */ import_react.default.createElement("div", null, /* @__PURE__ */ import_react.default.createElement("div", null, "Hello ", username, "!"), /* @__PURE__ */ import_react.default.createElement("div", null, number), /* @__PURE__ */ import_react.default.createElement("button", { onClick: () => setNumber((num) => num + 1) }, "ADD!"));
 };
 
 // src/client.tsx
@@ -35367,7 +35367,8 @@ function render() {
   if (!div) {
     return alert("fug :DDD");
   }
-  return (0, import_client.hydrateRoot)(div, /* @__PURE__ */ import_react2.default.createElement(App, { username }));
+  const props = JSON.parse(serverProps);
+  return (0, import_client.hydrateRoot)(div, /* @__PURE__ */ import_react2.default.createElement(App, { ...props }));
 }
 render();
 /*! Bundled license information:

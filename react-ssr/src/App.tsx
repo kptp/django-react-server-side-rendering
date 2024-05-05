@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export const App = ({ username }: { username: string }) => {
+export const App = ({ username }: ServerProps) => {
   const [number, setNumber] = useState(0);
   return (
     <div>
