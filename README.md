@@ -14,6 +14,10 @@ mvn package -Pnative
 mvn exec:exec
 ```
 
+```
+patch -p1 < patches/django/django.patch
+```
+
 PATH
 
 - Add correct graalvm JVM

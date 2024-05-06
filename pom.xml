@@ -62,7 +62,8 @@
             <configuration>
               <!-- specify python packages as if used with pip -->
               <packages>
-                <package>django==4.2</package>
+                <package>django==5.0</package>
+                <package>patch==1.16</package>
               </packages>
               <pythonHome>
                 <!-- java-like regular expression what file paths should be included into venv/home;

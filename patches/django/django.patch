@@ -1,0 +1,19 @@
+diff --git a/target/classes/vfs/venv/lib/python3.10/site-packages/django/template/utils.py b/target/classes/vfs/venv/lib/python3.10/site-packages/django/template/utils.py
+index 2b118f9..a1a315b 100644
+--- a/target/classes/vfs/venv/lib/python3.10/site-packages/django/template/utils.py
++++ b/target/classes/vfs/venv/lib/python3.10/site-packages/django/template/utils.py
+@@ -1,4 +1,5 @@
+ import functools
++import os
+ from collections import Counter
+ from pathlib import Path
+ 
+@@ -105,7 +106,7 @@ def get_app_template_dirs(dirname):
+     template_dirs = [
+         Path(app_config.path) / dirname
+         for app_config in apps.get_app_configs()
+-        if app_config.path and (Path(app_config.path) / dirname).is_dir()
++        if app_config.path and os.path.exists(Path(app_config.path) / dirname) and  (Path(app_config.path) / dirname).is_dir()
+     ]
+     # Immutable return value because it will be cached and shared by callers.
+     return tuple(template_dirs)
