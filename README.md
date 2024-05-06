@@ -1,13 +1,32 @@
-This simple project is meant as a jumping off point for a polyglot Python Java application on GraalVM.
+# Django React Server Side Rendering
 
-To build a standalone native executable you need to use a [GraalVM JDK with Native Image](https://www.graalvm.org/downloads/) and run:
+Test project for server side rendering React within Django using
+GraalVM polyglot programming.
+
+Based on the GraalVM Java + Python polyglot example.
+
+## Concessions
+
+- The code quality is bad
+- A lot of patching was needed
+- It feels like it barely works
+  - Django runs on a single thread
+- I was unable to get GraalPy running and supporting
+  JavaScript without running it via Java
+
+## Requirements
+
+- JAVA_PATH pointing at GraalVM JVM
+- node
+- npm
+- maven
 
 ```
 mvn package -Pnative
 ```
 
 ```
-mvn package -Pnative
+mvn package
 ```
 
 ```
@@ -17,13 +36,3 @@ mvn exec:exec
 ```
 patch -p1 < patches/django/django.patch
 ```
-
-PATH
-
-- Add correct graalvm JVM
-- Add graalpy bin
-
-kyosti@kyosti-ThinkPad-T480:~/Python/test-graalpy/test$ echo $PATH
-/home/kyosti/graalvm-jdk-22.0.1+8.1/bin:/home/kyosti/.nvm/versions/node/v20.9.0/bin:/home/kyosti/.cargo/bin:/home/kyosti/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/kyosti/.dotnet/tools:/usr/lib/jvm/java-8-oracle/bin:/usr/lib/jvm/java-8-oracle/db/bin:/usr/lib/jvm/java-8-oracle/jre/bin:/home/kyosti/.local/bin:/home/kyosti/skripteja:/home/kyosti/.unison-install:/home/kyosti/.local/bin:/home/kyosti/scripts:/home/kyosti/apache-maven-3.9.6/bin:/home/kyosti/graalpy-community-24.0.1-linux-amd64/bin
-kyosti@kyosti-ThinkPad-T480:~/Python/test-graalpy/test$ echo $JAVA_HOME
-/home/kyosti/graalvm-jdk-22.0.1+8.1
